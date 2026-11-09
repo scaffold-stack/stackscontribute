@@ -1,12 +1,27 @@
-import React from 'react'
+import deployments from '@/generated/deployments.json';
 
-function Footer() {
-    return (
-    <div className='w-full mb-[50px]'>         
-        <p className='text-[12px] font-mono font-500 text-[#908E8E] flex items-center justify-center text-center'>Footer(c)</p>
-    </div>
+export default function Footer() {
+  const contractId = deployments?.contracts?.contribute?.contract_id as string | undefined;
+  const txId = deployments?.contracts?.contribute?.tx_id as string | undefined;
 
-    );
-  }
-
-export default Footer
+  return (
+    <footer className="site-footer">
+      <p>Open causes. Open donations. Built on Stacks.</p>
+      {contractId ? (
+        <a
+          href={
+            txId
+              ? `https://explorer.hiro.so/txid/${txId}?chain=testnet`
+              : `https://explorer.hiro.so/address/${contractId}?chain=testnet`
+          }
+          target="_blank"
+          rel="noreferrer"
+        >
+          {contractId}
+        </a>
+      ) : (
+        <span>Contract pending deploy</span>
+      )}
+    </footer>
+  );
+}

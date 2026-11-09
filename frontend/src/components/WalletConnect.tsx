@@ -80,7 +80,7 @@ export function WalletConnect() {
 }
 
 const walletButtonClass =
-  'bg-[#434242] w-[135px] h-[40px] rounded-[40px] border-[1px] border-[#1F1E1F] text-[12px] text-[#F4F3EF] font-mono leading-[100%]';
+  'bg-[#10241c] min-w-[135px] h-[40px] px-4 rounded-[40px] border-[1px] border-[#10241c] text-[12px] text-[#F7FBF8] font-[family-name:var(--font-body)] leading-[100%]';
 
 function DevnetWalletChooser() {
   const address = useAtomValue(addressAtom);

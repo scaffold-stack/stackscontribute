@@ -10,14 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        instrument: ['"Instrument Sans"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        display: ['Fraunces', 'Georgia', 'serif'],
+        body: ['Outfit', 'sans-serif'],
+        instrument: ['Outfit', 'sans-serif'],
+        mono: ['ui-monospace', 'monospace'],
       },
-      colors: {
-        gray: {
-          950: '#030712',
-        }
-      }
     },
   },
   plugins: [],
