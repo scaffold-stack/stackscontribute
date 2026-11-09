@@ -80,7 +80,7 @@ export function WalletConnect() {
 }
 
 const walletButtonClass =
-  'bg-[#10241c] min-w-[135px] h-[40px] px-4 rounded-[40px] border-[1px] border-[#10241c] text-[12px] text-[#F7FBF8] font-[family-name:var(--font-body)] leading-[100%]';
+  'bg-[#10241c] min-w-0 h-8 sm:h-9 px-2.5 sm:px-4 rounded-[40px] border border-[#10241c] text-[11px] sm:text-[12px] text-[#F7FBF8] font-[family-name:var(--font-body)] leading-[100%] whitespace-nowrap';
 
 function DevnetWalletChooser() {
   const address = useAtomValue(addressAtom);
@@ -146,7 +146,7 @@ function DevnetWalletChooser() {
         <button
           type="button"
           onClick={disconnectWallet}
-          style={{ padding: '6px 12px', color: '#9ca3af', cursor: 'pointer', background: 'transparent', border: 'none' }}
+          className="text-[11px] sm:text-xs text-[#5f7368] px-1 sm:px-2 bg-transparent border-0 cursor-pointer"
         >
           Disconnect
         </button>
@@ -265,9 +265,9 @@ function HostedWalletConnect() {
       <div className={`${walletButtonClass} flex items-center justify-center`}>
         {short}
       </div>
-      <button 
+      <button
         onClick={handleDisconnect}
-        style={{ padding: '6px 12px', color: '#9ca3af', cursor: 'pointer', background: 'transparent', border: 'none' }}
+        className="text-[11px] sm:text-xs text-[#5f7368] px-1 sm:px-2 bg-transparent border-0 cursor-pointer"
       >
         Disconnect
       </button>
